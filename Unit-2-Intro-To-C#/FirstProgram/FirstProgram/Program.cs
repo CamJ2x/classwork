@@ -42,7 +42,7 @@ class Program
         int number2 = 0;
         int number3 = 0;
         
-        // Defien a variable to hold the sum of the numbers 
+        // Define a variable to hold the sum of the numbers 
         int sum = 0;
         
         
