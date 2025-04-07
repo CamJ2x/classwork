@@ -5,9 +5,9 @@ class Program
     static void Main(string[] args)
     {
         // Variables need for code
-        int number1 = 0;
+        double number1 = 0;
         double number2 = 0.5;
-        int sum = 0;
+        double sum = 0;
         // Ask the user for an input
         Console.WriteLine("Please enter a number that I'll add .5 to: ");
         string aLine; // stores the input from the user
