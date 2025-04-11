@@ -4,7 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        
         int number = 0;
         Console.WriteLine("What's your name? ");
         string name = Console.ReadLine();
