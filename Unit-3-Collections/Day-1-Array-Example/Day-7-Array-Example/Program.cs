@@ -5,10 +5,10 @@ using System;
 class Program
     {
         /**************************************************************************************
-         * This app will receive up to 10 numbers from the user
+         * This app will receive up to 5 numbers from the user
          *
          * After the user has indicated they have no more numbers to enter
-         *             or 10 numbers have been entered...
+         *             or 5 numbers have been entered...
          *               
          * We will display each or the numbers entered with an indicator if number odd or even,
          *                 their sum and average
@@ -25,8 +25,13 @@ class Program
         {
             Console.WriteLine("\nWelcome to my app!");       // Verify the app started
 
+            // const marks the vairable as a constant 
+            // a constant cannot be changed once it is assigned a value
+            // constant names should be all UPPERCASE with _ to seperate the parts of a name 
             // Define a constant to use to reference the size of the array
-            const int ARRAY_SIZE = 5;  // use this every where you want to code the size of the array
+            const int ARRAY_SIZE = 5;  // use this everywhere you want to code the size of the array
+            
+            
 
             // Define an array to hold up to 10 numbers entered by the user
             double[] theNumbers = new double[ARRAY_SIZE];  //define an array of 10 doubles
