@@ -4,7 +4,7 @@ using System.Collections.Generic;  // Give me access to the systems generic coll
 namespace Day_2_Dictionary_Example
 {
     internal class Program
-    {
+    { 
         static void Main(string[] args)
         {
             /*********************************************************
