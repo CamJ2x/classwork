@@ -4,6 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        Dictionary<string, decimal> shoppingList = new Dictionary<string, decimal>();
+        
     }
+    
+    
 }
