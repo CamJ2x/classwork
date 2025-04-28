@@ -84,11 +84,52 @@ public class Student
         studentName = name;   // Set the class data to the data passed in from the user
         testScores  = scores; // Set the class data to the data passed in from the user
     }
+    /********************************************************************************************
+     * Getters and Setters to allow access to our private data
+     *
+     * Getters and Settors are special method to allow a class controlled access to the data
+     *
+     * Getters = return the value in out data members
+     * Setters = allow the charging of data members
+     *
+     * By convention: Getters are named GetVariableName
+     *                Setters are named SetVariableName
+     *
+     * Most IDEs will generate standard Getters and Setters for any data already defined in class
+     *******************************************************************************************/
+    public string GetStudentName()
+    {
+        return studentName; // return the value in this private data member
+    }
+
+    public List<double> GetStudentScores()
+    {
+        return testScores;
+    }
+
+    //public List<double> GetStudentScores()
+    //{
+     //   return testScores; // return the value in this private data member
+   // }
+
+    public void SetStudentScores(List<double> theScores)
+    {
+        testScores = theScores;
+    }
+    
+    
     
     /********************************************************************************************
      * Methods to manipulate the class
      *******************************************************************************************/
-    
+    // We need to provide a 
+
+    public override string ToString()
+    {
+        Console.WriteLine("In two string method");
+        return base.ToString();
+    }
+
     // We need a method to allow the user to add scores to our testScores List
     // Every method requires a method signature and a body
     // Method signature:   access  return
@@ -124,7 +165,7 @@ public class Student
     // Method compute average score for user
     public double AvgOfScores()
     {
-        return SumOfScores() / testScores.Count; // Using a class method inside another class method
+        return Math.Round(SumOfScores() / testScores.Count, 2); // Using a class method inside another class method
     }
     
     
