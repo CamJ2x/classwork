@@ -43,6 +43,18 @@
                                         //          value is keyword representing the value assigned        
         }
 
+        public string CardSuit
+        {
+            get { return cardSuit; }
+            set { cardSuit = value;}
+        }
+
+        public string CardColor
+        {
+            get { return cardColor; }
+            set { cardColor = value;}
+        }
+
         /*********************************************************************
          * Method members (functions that operate on the class data)
          *********************************************************************/
