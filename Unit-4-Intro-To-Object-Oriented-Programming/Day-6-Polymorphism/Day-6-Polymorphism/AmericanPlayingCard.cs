@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Day_3_Inheritance
+namespace Day_6_Polymorphism
 {
-    // This will be a subclass of a PlayingCard
+    // This is a subclass of a PlayingCard
     // and will add what an AmericanPlaying needs that differs from a PlayingCard:
 
     //     Card values: 0 to 13 (Joker to King)
@@ -18,9 +18,6 @@ namespace Day_3_Inheritance
         /*************************************************************************************
          * Additional data required by the subclass
          ************************************************************************************/
-        // Constant are used to facilitate coding and understanding 
-        // ( C# coding convention: CONSTANT_NAMES - All uppercase; words seperated by underscores)
-        // const indicates  this data item is a constant - connot be changed once assigned a value 
         private const int    DEFAULT_CARD_VALUE = 0;
         private const string DEFAULT_COLOR      = "Black";
         private const string DEFAULT_SUIT       = "Joker";
@@ -35,14 +32,8 @@ namespace Day_3_Inheritance
                                         //   8        9      10     11        12      13
                                         };
 
-        // A subclass contructor MUST call its Super Calsls contructor
-        // to ensure the super class data intialized
-        
-        // base() represents a base class ctor
-        //
         // Default Constructor for an AmericanPlayingCard
         //     it must call the base() to initialize the base class
-        // The super class has only 3-arg ctor so we have to call it to initialize the super class
 
         public AmericanPlayingCard() : base(DEFAULT_CARD_VALUE, DEFAULT_SUIT, DEFAULT_COLOR) {}
 
@@ -118,7 +109,7 @@ namespace Day_3_Inheritance
          * Overrides - Replace unwanted behavior of base class with behaviors for the subclass
          ***************************************************************************************/
 
-        // No Overrides requires as base class processing does what we want it to do
+        // No Overrides required as base class processing does what we want it to do
 
         /****************************************************************************************
          * User Methods for class - Allow user to use and manipulate the class
@@ -130,7 +121,7 @@ namespace Day_3_Inheritance
         }
 
         // Display an object of the class
-        public void ShowCard()
+        public override void ShowCard()
         {
             Console.WriteLine($"AmericanPlayingCard: Value: {GetCardValueName()} ({base.CardValue}), Suit: {base.CardSuit}, Color: {base.CardColor}");
         }
