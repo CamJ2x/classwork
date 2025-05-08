@@ -144,6 +144,15 @@ namespace Day_3_Inheritance
         }
 
         // Equals returns true to data members of two objects are equal
+        // Default Equals() only compares the contents of the refernce variable (locations)
+        // If you want to compare the contents of the objects - Create an Equals() override
+        
+        // the keyword this represents the object used to invoke the method
+        
+        //      In the class method: this represents the object to the left of the dot 
+        // To excute a class method: object.method(parameters)
+        
+        // myCard.Equals(youCard) ---> this represents myCard and otherObject represents yourCard
         public override bool Equals(object otherObject)
         {
             if (otherObject.GetType() != this.GetType())  // If types differ...
