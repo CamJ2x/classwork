@@ -28,6 +28,10 @@ namespace Day_6_Polymorphism
         //
         // Adding protected to the setter allows only subclasses 
         //        of this class to change the value in teh variable
+        //
+        // public means anyone with an object of the class can change the data
+        // protected limits the ability to change data to subclasses
+        //          (keeping access in the inheritance family)
         //---------------------------------------------------------------
         public int    CardValue { get; protected set; } // Use default getter and setter
         public string CardSuit  { get; protected set; } // Use default getter and setter

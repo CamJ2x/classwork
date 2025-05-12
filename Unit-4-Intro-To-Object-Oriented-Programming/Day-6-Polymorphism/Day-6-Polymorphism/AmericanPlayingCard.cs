@@ -121,6 +121,8 @@ namespace Day_6_Polymorphism
         }
 
         // Display an object of the class
+        // override indicates we are overriding (changing) the behavior of a method in the superclass
+        //          to implement polymorphism for this class
         public override void ShowCard()
         {
             Console.WriteLine($"AmericanPlayingCard: Value: {GetCardValueName()} ({base.CardValue}), Suit: {base.CardSuit}, Color: {base.CardColor}");
