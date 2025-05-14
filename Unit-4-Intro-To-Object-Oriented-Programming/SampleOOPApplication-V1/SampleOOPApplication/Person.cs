@@ -34,16 +34,24 @@ public class Person
   *
   * 3 ways to define getters and setters shown
   *****************************************************************************/
- 
+ // Automatically implemented property
+ // Convenient and common - no special processing you want for getter/setter
+ // automatically defines a private variable for you (you don't need to declare it)
+ // Use the Property Name to access the data if you set up a private variable on your own
  public string Name { get; set; }   // Use property name to assign values
 
+ // Full property syntax or block-bodied syntax
+ // You provide the processing for getter and setter
+ // Flexible allows for custom logic in getter/setter 
+ // Fairly common
  public int HeightInInches
  {
      get { return _heightInInches; }
      
-     set { _heightInInches = value; }
+     set { _heightInInches = value; } // value is a key word that represents the value passed to setter 
  }
- 
+ // Expression-bodied property
+ // More consise (less code, can be confusing)
  public double WeightInPounds
  {
      get => _weightInPounds;
