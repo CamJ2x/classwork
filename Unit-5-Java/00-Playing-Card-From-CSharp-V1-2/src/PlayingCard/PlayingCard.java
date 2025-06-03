@@ -1,6 +1,8 @@
 ﻿// namespace Playing_Card_Poker_Game;  // C# groups things in namespaces
 package PlayingCard; // Java groups things in package - package name must match the folder name for the package
 
+import java.util.Objects;
+
 public class PlayingCard
 {
     /***************************************************************************************************
@@ -77,7 +79,7 @@ public class PlayingCard
     {
         value = DEFAULTCARDVALUE;
         suit = DEFAULTSUIT;
-        SetColor(suit);     // Set color in object based on suit - NOTE: suit must have a value before this
+        setColor(suit);     // Set color in object based on suit - NOTE: suit must have a value before this
         faceUp = false;
     }
     /***************************************************************************************************
@@ -86,17 +88,18 @@ public class PlayingCard
     public PlayingCard(CardValue value, CardSuit suit)
     {
         this.value = value;   // Set value in object to value passed as argument
-        SetColor(suit);        // Set color in object based on suit passed as argument
+        setColor(suit);        // Set color in object based on suit passed as argument
         this.suit = suit;     // Set suit in object to suit passed as argument
         faceUp = false;
     }
     /***************************************************************************************************
      * 2-arg (int and CardSuit) constructor
      ***************************************************************************************************/
-    public PlayingCard(int value, CardSuit suit)
+    public PlayingCard(int , CardSuit suit)
     {
-        this.value = SetValue(value); // Set value in object based on int value passed as argument
-        SetColor(suit);               // Set color in object based on suit passed as argument
+        // to convert an int to enum
+        this.value = setValue(value); // Set value in object based on int value passed as argument
+        setColor(suit);               // Set color in object based on suit passed as argument
         this.suit = suit;             // Set suit in object to suit passed as argument
         faceUp = false;
     }
@@ -108,7 +111,7 @@ public class PlayingCard
     /***************************************************************************************************
      * Standard  getter and setter methods
      ***************************************************************************************************/
-    public CardValue getValue() {
+    public CardValue getValue(CardValue value) {
         return value;
     }
 
@@ -141,6 +144,9 @@ public class PlayingCard
     }
 
     /***************************************************************************************************
+     * c#: MethodNames are Pascal case (start with uppercase letter)
+     *          opening brace for the method is on eht same line as method signature
+     * ///////////////////////////////////////
      * additional getter and setter methods
      ***************************************************************************************************/
 
@@ -206,7 +212,7 @@ public class PlayingCard
         }
     }
 
-    private void SetColor(CardSuit suit)
+    private void setColor(CardSuit suit)
     {  // Set the color based on the suit of the object
         // if (suit == cardSuit.Spade or suit == cardSuit.Club) - stack cases does this
         switch (suit)
@@ -225,7 +231,7 @@ public class PlayingCard
         }
     }
 
-    public void Flip()  // reverse if card is face up or down
+    public void flip()  // reverse if card is face up or down
     {
         faceUp = !faceUp;
     }
@@ -236,45 +242,28 @@ public class PlayingCard
      *      ToString()    - represent class data as a String
      *      Equals()      - determine if contents of two object of the class are equal
      *      GetHashCode() - generate hash code based on unchanging data members
-     * 
+     *
      ***************************************************************************************************/
-    // Ask compiler to assure this is a valid super class override
-    public override string ToString()
-    { // Return a String representation of the object
-        return $"Playing Card: Value={_value}({(int)_value})\tSuit={_suit}\tColor={_color}\tFace Up={_faceUp}";
+    @Override
+    public String toString() {
+        return "PlayingCard{" +
+                "value=" + value +
+                ", color=" + color +
+                ", suit=" + suit +
+                ", faceUp=" + faceUp +
+                '}';
     }
 
-    // Ask compiler to assure this is a valid super class override
-    public override bool Equals(object otherObject)
-    {   // Compare Two PlayingCards for equality - note generic Object parameter
-    
-        if (otherObject == this)
-        {   // if object being compared to itself
-            return true;             // objects are equal
-        }
-        else
-        {
-            // 'is' returns true if an object is an instance of the class specified
-            if ((otherObject is PlayingCard))
-            {   // If the object being compared to is the same class as object 
-                PlayingCard otherCard = (PlayingCard)otherObject; // Define a PlayingCard object from object being compared to
-                return (this.value == otherCard.value && this.color == otherCard.color && this.suit == otherCard.suit);
-            }
-            return false;    // Required so IDE realizes all logic paths are closed
-        }
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        PlayingCard that = (PlayingCard) o;
+        return faceUp == that.faceUp && value == that.value && color == that.color && suit == that.suit;
     }
-    // Ask compiler to assure this is a valid super class override
-    public override int GetHashCode()
-    {   // Generate a hash Code for object if C# needs One e.g. for a HashMap
-        // A hash code is a unique value representing an instance of an object
-        // It is recommended to use member variables whose value is unlikely to change
-        //
-        // The HashCode class has a method called .Combine()
-        //     which will generate a hash code from the values in the variable you send it
-        //
-        // The same variables used to determine object equality should be used
-        //     when generating a hash code
-        return HashCode.Combine(value, suit, color);
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value, color, suit, faceUp);
     }
 
     /***************************************************************************************************
@@ -282,11 +271,23 @@ public class PlayingCard
      ***************************************************************************************************/
     public void ShowCard()
     {   // Display an instance of a PlayingCard
-        Console.WriteLine(this.ToString());
+        //
+        //object.method() - C#: Console is an object defined by c#; Writeline is a method() for Console
+        //
+        //class.object.method - System is class defined by Java; out is an object defined by Java
+        //                      print(0 in method defined in the system class
+        //
+         //Java: System.out.printlin()
+        System.out.println(this.toString());
     }
+    // Display an instance of PLayingCard
+    // Console .WriteLine() to display to screen
+    // Console.WriteLine(this.ToString());
+
+    // Java: System.out.printlinee(
 
     public void ShowCardWithHash()
     {   // Display an instance of a PlayingCard with HashCode
-        Console.WriteLine(this.ToString() + "\thashCode: " + GetHashCode());
+        System.out.println(this.toString() + "\thashCode: " + hashCode());
     }
 }  // End of PlayingCard Class
