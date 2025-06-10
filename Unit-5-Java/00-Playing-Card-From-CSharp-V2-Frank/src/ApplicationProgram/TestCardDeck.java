@@ -3,10 +3,7 @@ package ApplicationProgram;
 import CardDeck.CardDeck;
 import PlayingCard.PlayingCard;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class TestCardDeck {
 //
@@ -33,7 +30,7 @@ public class TestCardDeck {
         /*****************************************************************************************
          * dealCard() removes a card from the cardDeck and returns it
          *
-         * if one would like to create a discard pile of dealt cardsa decision needs to be made:
+         * if one would like to create a discard pile of dealt cards, a decision needs to be made:
          *
          *   1. Do you want the discard pile to have the same behaviors as a CardDeck?
          *   2. Do you want the discard pile to just be a simple pile of cards?
@@ -77,6 +74,43 @@ public class TestCardDeck {
         for(PlayingCard discardPileCard : discardPile) {
             System.out.println(discardPileCard);
         }
+        /*************************************************************************
+         * Demostrate use of the Java Set class
+         *
+         * A Set is an ArrayList that will not allow duplicates
+         *
+         */
+
+        // Define an ArrayList
+        List<String> names = new ArrayList<>();
+
+        names.add("Frank");
+        names.add("Aaron");
+        names.add("Jay");
+        names.add("frank");
+
+        // // Display all names in list
+        for(String aName : names){
+            System.out.println(aName);
+        }
+
+        // Define an Set class object
+        // A Hashset - store the entries in an unknown sequence (by hashCode)
+        //             hashCode is a unique representing the data in the object
+        //
+        Set<String> nameSet = new HashSet<>();
+
+        names.add("Frank");
+        names.add("Aaron");
+        names.add("Jay");
+        names.add("frank");
+
+        // // Display all names in list
+        for(String aName : names){
+            System.out.println(aName);
+        }
+
+
 
     } // End of main() method
 } // End of TestPlayingCard CLass
