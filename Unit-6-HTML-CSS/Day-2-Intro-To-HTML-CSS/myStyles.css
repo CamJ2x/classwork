@@ -9,4 +9,15 @@
 
 html { /* style all the elements within the html tag */
     background-color: lightgoldenrodyellow;
+    font-size: 20px;
+    color:blue
 }
+h2 {
+  color:green
+}
+footer{
+  color: red;
+  margin-top: 50px;
+  font-size: 10px;
+}
+
