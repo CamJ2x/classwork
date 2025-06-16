@@ -10,8 +10,20 @@
  */
 function variables() {
   // Declares a variable where the value cannot be changed
+  const aVariable = 42;
+  console.log(`The value in aVariable is: ${aVariable}`)
   // Declares a variable those value can be changed
   // Declares a variable that will always be an array
+  let itBe = 87.4;
+  console.log(`The value in itBe is: ${itBe}`)
+
+  itBe = 1776;
+  console.log(`The value in itBe is: ${itBe}`)
+
+  let stuff = ["things", 'Kevin', "Hello", 77166.7]
+  console.log(`The value in Stuff is: ${stuff}`)
+  console.log(stuff)
+  console.table(stuff)
 }
 
 /**

@@ -6,12 +6,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Info</title>
+    <link rel="stylesheet" href="contactInfo.css"
 </head>
 <body>
     <header>
         <h1>Contact Information Form</h1>
         <h3>Please enter your information and click submit</h3>
     </header>
+    <nav>
+        <a href="index.html">I want to go back PLEEEEAAAAAASSSSEE</a>
+    </nav>
     <main> <!-- contains the primary content of the page                    -->
            <!-- We use and HTML form to interact with a used                -->
            <!-- The form can send the data to an API or JavaScript program  --> 
@@ -40,7 +44,29 @@
             <div> <!-- Ask for for the person's name -->     
                 <label for="nameField">Enter your full name: </label>
                 <input type="text" id="nameField" name="personsName"/>
-            </div>    
+            </div>
+            
+            <div> <!-- Ask for for the person's city where they live -->     
+                <label for="cityField">Enter the city you're in: </label>
+                <input type="text" id="cityField" name="currentCity"/>
+            </div> 
+
+            <div> <!-- Ask for for the person's favorite number -->     
+                <label for="favNumField">Please choose your favorite number: </label>
+                <input type="number" id="favNumField" name="favoriteNumber"/>
+            </div> 
+
+            <div> <!-- Ask for for the person's favorite color -->     
+                <label for="favColorField">Please choose your favorite color: </label>
+                <input type="color" id="favColorField" name="favoriteColor"/>
+            </div>
+            
+            <div> <!-- Ask for for the person's next birthday-->     
+                <label for="nextBdayField">Please enter your next birthday: </label>
+                <input type="date" id="nextBdayField" name="nextBirthday"/>
+            </div>
+            
+            <input type="submit" value="Click Here To Submit"/>
            </form>
 
     </main>
