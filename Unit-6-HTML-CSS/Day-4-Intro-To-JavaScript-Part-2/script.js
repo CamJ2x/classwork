@@ -37,6 +37,10 @@ function variables() {
   console.table(stuff)
 
 }
+function varTest() {
+  let num = 10;
+  var someVariable = num
+}
 
 /**
  * Functions can also accept parameters.
@@ -51,17 +55,17 @@ function printParameters(param1, param2) {
 
 /**
  * Compares two values x and y.
- * == is loose equality
- * === is strict equality
+ * == is loose equality -  values are the same, but types don't matter
+ * === is strict equality - values and type must be the same 
  * @param {Object} x
  * @param {Object} y
  */
 function equality(x, y) {
-  console.log(`x is ${typeof x}`);
+  console.log(`x is ${typeof x}`); // typeof will return the data type of the variable 
   console.log(`y is ${typeof y}`);
 
-  console.log(`x == y : ${x == y}`); // true
-  console.log(`x === y : ${x === y}`); // false
+  console.log(`x == y : ${x == y}`);
+  console.log(`x === y : ${x === y}`); 
 }
 
 /**
@@ -79,16 +83,19 @@ function falsy(x) {
 }
 
 /**
+ * JavaScript Objects are NOT the same Object-Oriented Objects 
+ * 
  *  Objects are simple key-value pairs
     - values can be primitive data types
     - values can be arrays
     - or they can be functions
+    JSON - JavaScript Object Notation - How we share data between devices 
 */
 function objects() {
-  const person = {
-    firstName: "James T.",
-    lastName: "Kirk",
-    age: 42,
+  const person = {           // JavaScript objects are enclosed in {}
+    firstName: "James T.",   // attributes in are specified with name : value
+    lastName: "Kirk",        // multiple values are seperated by commas
+    age: 42,                 ,,
     employees: [
       "Spock",
       "McCoy",
@@ -98,16 +105,31 @@ function objects() {
   };
 
   // Log the object
+  console.log(person)
+  console.log(`person contains: ${person}`);
+  console.log(person);
 
   // Log the first and last name
 
+  console.log(`Person's first name:${person.firstName}`)
+  console.log(`          last name: ${person.lastName}`)
+
   // Log each employee
+
+  for( let i=0; i < person.employees.length; i++) {
+    console.log(`Employee #${i+1}: ${person.employees[i]}`)
+  }
 }
 
 /*
 ########################
 Function Overloading
 ########################
+
+in C# and Java Function Overloading is when functions have the same name, but different parameters
+and the compiler determines which function to call based on the data types of the parameters
+
+In C#/Java functions overloads are used for multiple constructors of a class
 
 Function Overloading is not available in Javascript. If you declare a
 function with the same name, more than one time in a script file, the
