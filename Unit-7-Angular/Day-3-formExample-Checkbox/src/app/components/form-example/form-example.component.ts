@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { throwError } from 'rxjs';
@@ -5,7 +6,8 @@ import { throwError } from 'rxjs';
 @Component({
   selector: 'form-example',  // Name used in html to reference the component <form-example>
   standalone: true,
-  imports: [FormsModule],  // Tell Angular we want Forms support for this code
+  imports: [FormsModule, CommonModule],  // Tell Angular we want Forms support for this code
+                                         // Tell Angular we are using common processing like *ngFor
   templateUrl: './form-example.component.html',
   styleUrl: './form-example.component.css'
 })
@@ -23,9 +25,22 @@ export class FormExampleComponent {
   // Sports is specified as a checkbox it's data will be returned as an array
   // With each element in the array corresponding to a choice
   // Checkbox need to be included in the html a individual element
-  // More tomorrow
-  //sports : any[] 
-  sports = ""
+
+  // Define an array to hold the checkbox values
+  // Each element in the array of checkbox values have two properties 
+
+  //       name: waht is displayed
+  //       value: what is returned when the checkbox is checked 
+  sports : any[] = [ // any type is used to make the array fleiable - hold any kind of data
+    {name: 'European Footbal', value: "Soccer"},
+    {name: `Cricket`, value: "Cricked"},
+    {name: `American Football`, value: "Football"},
+    {name: `Baseball`, value: "Baseball"},
+    {name: `Hockey`, value: "Hockey"},
+    {name: `Other`, value: "Other Sport"},
+    {name: `None`, value: "None"}
+  ]
+  
  // Methods to handle interactions with the html/web page
   onSubmit() { // Handle the Submit button click on the  form
     this.buttonClicked = true
