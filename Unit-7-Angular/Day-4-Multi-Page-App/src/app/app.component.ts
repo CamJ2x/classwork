@@ -2,6 +2,9 @@
 // Most imported name must be included in imports property of @Component
 import { Component }       from '@angular/core';
 import { RouterOutlet }    from '@angular/router';
+
+// We must import any components used by this component 
+// The import name is the component name (without a -) component
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HomeComponent }   from './components/home/home.component';
 

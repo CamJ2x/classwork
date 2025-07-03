@@ -4,7 +4,14 @@
         <!-- here we are specifing the URL path for the link            -->
         <!-- when a link is clicked the path in the href= will be added -->
         <!--      to the server-name:port in the URL                    -->   
-        <a href="/home">Home</a>        
+
+        <!-- Angular using the router to determine which component      -->
+        <!-- should be rendered for the URL path in the link.           -->
+        <!-- a <router-link> tag miust be included in the component.    -->
+        <!--        containing the link-->
+        <a href="/home">Home</a>     
+        &nbsp; <!-- Puts a space between -->
+        <a href="/whatever">Enter Contact Info</a>   
     </div>
 </nav>
    
