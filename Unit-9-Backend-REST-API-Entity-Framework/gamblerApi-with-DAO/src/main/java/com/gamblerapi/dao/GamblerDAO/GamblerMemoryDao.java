@@ -20,7 +20,7 @@ public class GamblerMemoryDao {
     {
         this.gamblers = new ArrayList<Gambler>(); // Instantiate the data source object
 
-        // INitialize tehdata siurce
+        // Initialize the data siurce
         gamblers.add(new Gambler(12 , "T Judson Smith" , "Los Angeles, CA", 1398.65,    "05/01/1972"));
         gamblers.add(new Gambler(49 , "Dana Imori"     , ""               , 7580.50,    "08/08/1938"));
         gamblers.add(new Gambler(201, "S.Q. Elle"      , "Relational, DA" , 1000000.01, "05/23/1995"));
