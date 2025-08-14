@@ -30,7 +30,7 @@ public newMovie : MoviesInfo =  {
 
   ngOnInit() {
     this.newMovie = history.state.theMovie
-    console.log('Received data:', this.newMovie)
+    // console.log('Received data:', this.newMovie) //Optional for debugging
   }
 
 
