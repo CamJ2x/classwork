@@ -1,1 +1,13 @@
-<h1>This is our Home Page</h1>>
+<h1>This is our Home Page</h1>
+<table>
+    @for  (aGambler of theGamblers; track aGambler.id){
+    <tr>
+        <td>{{aGambler.id}}</td>
+        <td>{{aGambler.name}}</td>
+        <td>{{aGambler.address}}</td>
+        <td>{{aGambler.salary}}</td>
+        <td>{{aGambler.birthDate}}</td>
+    </tr>
+    }
+</table>
+
